@@ -20,7 +20,7 @@ void merge(int ar[], int p, int q, int r)
     R[n2] =INT_MAX;
     for(k = p; k<= r; k++)
     {
-        if(L[i]<R[j])
+        if(L[i]<=R[j])
         {
             ar[k] = L[i];
             i++;
