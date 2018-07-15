@@ -1,5 +1,5 @@
 #include <iostream>
-
+/* Counting Sort */
 using namespace std;
 
 
@@ -47,6 +47,7 @@ int main() {
     
    
     int k = findmax(ar, n);
+    // Counting sort
     countSort(ar, b,  n, k);
     
     for(i = 1; i<=n; i++)
