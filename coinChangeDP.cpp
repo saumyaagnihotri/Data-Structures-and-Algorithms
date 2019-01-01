@@ -1,17 +1,23 @@
 #include <iostream>
 using namespace std;
 /* coin change problem DP */
-int dp[1000000];
-
 int ways(int c[], int m, int unit)
 {
-   if(unit==0)
-   return 1;
-   if(unit<0)
-   return 0;
-   if(m<=0 && unit>=1) 
-   return 0;
-   return ways(c, m-1 , unit) + ways(c,m , unit - c[m-1]);
+   
+   int i,j,x,y;
+   int table[unit+1][m];
+   for(i=0;i<m;++i)
+   table[0][i] =1;
+   for(i=1;i<unit+1;++i)
+   {
+       for(j=0;j<m;++j)
+       {
+           x = (i-c[j]>=0)?table[i-c[j]][j] : 0; //including c[j]
+           y = (j>=1)?table[i][j-1] : 0; // excluding c[j]
+           table[i][j] = x + y;
+        }
+   }
+   return table[unit][m-1];
     
 }
 int main() {
