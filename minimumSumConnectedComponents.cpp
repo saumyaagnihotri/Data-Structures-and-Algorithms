@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+/* Sum of the minimum elements in all connected components of an undirected graph */
 const int N = 10000;
 vector<int> graph[N];
 bool visited[N];
